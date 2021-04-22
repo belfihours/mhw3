@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1">
+    <title>Panificio Belfiore</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='mhw3.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <script src='contents.js' defer></script>
+    <script src='script.js' defer></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </head>
+  <body>
+    <header>
+        <div id ="overlay"></div>
+        <h1 strong>Panificio Belfiore</h1>
+        <div class='logo'>
+            <img id='logo' src="img/Logo.png">
+            <h5 strong>Panificio Belfiore</h1> 
+        </div>
+    </header>
+    
+    <div class="container">
+        <nav>
+            <a href="mhw2.css">
+                <span>Home</span>
+            </a>
+        </nav>   
+        <nav>
+            <a href="mhw2.css">
+                <span>Chi siamo</span>
+            </a>
+            <a href="mhw2.css">
+                <span>Dove siamo</span>
+            </a>
+            <a href="mhw2.css">
+                <span>Contattaci</span>
+            </a>
+        </nav>
+        <div id="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    
+    <main>
+        <div class='a' id='Pane'>
+            <div class="button">
+                <img src="img/bread.png">
+                <span>Pane</span>
+            </div>
+        </div>
+        <div  class='a' id='Pizza'>
+            <div class="button" >
+                <img src="img/pizza.png">
+                <span>Pizze</span>
+            </div>
+        </div>
+        <div class='a' id='Biscotti'>
+            <div class="button">
+                <img src="img/cookie.png">
+                <span>Biscotti</span>
+            </div>
+        </div>
+        <div  class='a' id='Bevande'>
+            <div class="button">
+                <img src="img/beer.png">
+                <span>Bevande</span>
+            </div>
+        </div>
+        <div  class='a' id='Ingredienti'>
+            <div class="button" id='Ingredienti'>
+                <img src="img/vegetable.png">
+                <span>Ingredienti</span>
+            </div>
+        </div>
+    </main>
+    <div class='preferiti hidden'></div>
+    <div class='search hidden'>
+        <input placeholder="Cerca"></input>
+        <img src="img/search.png">
+    </div>
+    <div class='corrente hidden'></div>
+    <h3 strong> I nostri prodotti</h3>
+    <div class="photogallery">
+        <img id='pane' src="img/pane.jpg">
+        <img id='pizza' src="img/pizza-napoletana.jpg">
+        <img id='biscotti' src="img/biscotti.jpg">
+        
+        <img id='tavolacalda' src="img/tavolacalda.jpg">
+    </div>
+    <h3 strong>Informazioni</h3>
+    <div id="info">
+        <span>Via Matteo Renato Imbriani, 55, Catania</span><br>
+        <span>095 447912</span>
+    </div>
+    <h3 strong>Dove trovarci</h3>
+    <div class="mappa">
+        <div id="map"></div>
+    </div>
+    <div id='food image'></div>
+    
+
+    <footer>
+        <span>
+            Simone Belfiore<br>1000011355<br>Università degli studi di Catania
+        </span>
+    </footer>     
+    
+  </body>
+</html>
