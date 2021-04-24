@@ -229,7 +229,7 @@ function avviaricerca(){
         } 
     }
     else{
-        console.log('ciao');
+        
         while(document.querySelector('div.corrente').firstChild){
             document.querySelector('div.corrente').removeChild(document.querySelector('div.corrente').firstChild);
         }
@@ -265,32 +265,41 @@ function initMap() {
   }
 
 const foodApi="https://foodish-api.herokuapp.com/";
+const drinkApi="https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
 function onResponse(response){
     return response.json();
 }
 
-function funzione(json){
+function changeFood(json){
+    console.log("cambio cibo");
     oggetto.src=json.image;
+}
+function changeDrink(json){
+    console.log("cambio bevanda");
+    oggetto.src=json.drinks["0"].strDrinkThumb;
 }
 
 function cambiaImg(event){
     oggetto=event.currentTarget;
-    console.log(oggetto);
     if(oggetto.id=="pane"){
-        fetch(foodApi + "api/images/burger/").then(onResponse).then(funzione);
-        console.log('burger');
+        fetch(foodApi + "api/images/burger/").then(onResponse).then(changeFood);  
     }
     else if(oggetto.id=="pizza"){
-        fetch(foodApi + "api/images/pizza/").then(onResponse).then(funzione);
+        fetch(foodApi + "api/images/pizza/").then(onResponse).then(changeFood);
     }
     else if(oggetto.id=="biscotti"){
-        fetch(foodApi + "api/images/dessert/").then(onResponse).then(funzione);
+        fetch(foodApi + "api/images/dessert/").then(onResponse).then(changeFood);
     }
     else if(oggetto.id=="tavolacalda"){
-        fetch(foodApi + "api/images/samosa/").then(onResponse).then(funzione);
+        fetch(foodApi + "api/images/samosa/").then(onResponse).then(changeFood);
     }
     
+}
+
+function cambiaImgCocktail(event){
+    oggetto=event.currentTarget;
+    fetch(drinkApi).then(onResponse).then(changeDrink);
 }
 
 let oggetto;
@@ -307,6 +316,7 @@ const ricerca=document.querySelector('.search input');
 const img1=document.querySelector('.photogallery #pane');
 const img2=document.querySelector('.photogallery #pizza');
 const img3=document.querySelector('.photogallery #biscotti');
+const img4=document.querySelector('.photogallery #bevande');
 const img5=document.querySelector('.photogallery #tavolacalda');
 
 
@@ -322,4 +332,5 @@ ricerca.addEventListener('keyup', avviaricerca);
 img1.addEventListener('click', cambiaImg);
 img2.addEventListener('click', cambiaImg);
 img3.addEventListener('click', cambiaImg);
+img4.addEventListener('click', cambiaImgCocktail);
 img5.addEventListener('click', cambiaImg);
